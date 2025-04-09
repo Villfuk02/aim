@@ -38,15 +38,15 @@ bool get_bit(const uint32_t field[], uint64_t index)
 {
     return field[index / 32] & (1 << (index % 32));
 }
-uint32_t count_bits(const uint32_t field[], uint64_t arr_size)
+uint64_t count_bits(const uint32_t field[], uint64_t arr_size)
 {
-    uint32_t res = 0;
+    uint64_t res = 0;
     for (uint64_t i = 0; i < arr_size; ++i)
         res += __builtin_popcount(field[i]);
     return res;
 }
 
-uint32_t eras_bitfield(uint64_t limit)
+uint64_t eras_bitfield(uint64_t limit)
 {
     if (limit <= 1)
         return 0;
@@ -68,12 +68,12 @@ uint32_t eras_bitfield(uint64_t limit)
         while (get_bit(field, prime));
     }
 
-    uint32_t set_bits = count_bits(field, arr_size);
+    uint64_t set_bits = count_bits(field, arr_size);
     free(field);
     return limit - 1 - set_bits;
 }
 
-uint32_t eras_bitfield2(uint64_t limit)
+uint64_t eras_bitfield2(uint64_t limit)
 {
     if (limit <= 1)
         return 0;
@@ -110,7 +110,7 @@ int main()
 #else
     uint64_t num;
     scanf("%" SCNu64, &num);
-    printf("%u", eras_bitfield2(num));
+    printf("%lu", eras_bitfield2(num));
 #endif
     return 0;
 }
