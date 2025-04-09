@@ -1,0 +1,42 @@
+# Build directories
+cmake-build-*/
+
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# CLion IDE project files
+.idea/
+*.iml
+
+# User-specific files
+*.swp
+*.swo
+*.swn
+*.user
+*.DS_Store
+*.directory
+
+# Logs and temporary files
+*.log
+
+# Backup files
+*~
+*.bak
+
+# Object and binary files
+*.o
+*.obj
+*.so
+*.a
+*.out
+*.exe
+*.dll
+
+# Test result or coverage files
+*.gcno
+*.gcda
+*.gcov
