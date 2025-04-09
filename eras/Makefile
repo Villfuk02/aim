@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=gnu23 -O3 -Wall -Wextra -Wpedantic -Werror -march=native
+CFLAGS = -std=gnu2x -O3 -Wall -Wextra -Wpedantic -Werror -march=native
 TARGET = eras
 SRC = main.c
 OBJ = $(SRC:.c=.o)
