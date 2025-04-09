@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <inttypes.h>
+
+// #define DEBUG
 
 #define TEST(func, num)                                                                              \
     do                                                                                               \
@@ -99,10 +102,15 @@ uint32_t eras_bitfield2(uint64_t limit)
     return (limit + 1) / 2 - set_bits;
 }
 
-int main(void)
+int main()
 {
-
+#ifdef DEBUG
     TEST(eras_bitfield2, 1000000000);
     TEST(eras_bitfield, 1000000000);
+#else
+    uint64_t num;
+    scanf("%" SCNu64, &num);
+    printf(eras_bitfield2(num));
+#endif
     return 0;
 }
