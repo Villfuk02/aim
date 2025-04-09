@@ -110,7 +110,7 @@ int main()
 #else
     uint64_t num;
     scanf("%" SCNu64, &num);
-    printf(eras_bitfield2(num));
+    printf("%lu", eras_bitfield2(num));
 #endif
     return 0;
 }
